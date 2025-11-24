@@ -136,3 +136,98 @@ img {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
 }
+
+.pages {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  background-color: var(--color-background-light);
+  /* Светлый фон для текста */
+}
+
+/* Общие стили для заголовка страницы */
+.pages h1.page-title,
+.pages h1 {
+  font-size: 2.5rem;
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-s);
+  text-align: left;
+}
+
+.pages .last-updated {
+  font-size: 0.9rem;
+  color: var(--color-grey);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-m);
+}
+
+/* Стили для главных разделов (h2) */
+.pages h2 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  /* Основной цвет для выделения раздела */
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-s);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 5px;
+}
+
+/* Стили для параграфов и списков */
+.pages p,
+.pages ul,
+.pages ol,
+.pages li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-m);
+}
+
+.pages ul,
+.pages ol {
+  padding-left: 25px;
+  /* Отступ для списков */
+  margin-bottom: var(--spacing-l);
+}
+
+.pages li {
+  margin-bottom: var(--spacing-s);
+}
+
+/* Выделение жирным ключевых понятий */
+.pages li strong {
+  color: var(--color-text-dark);
+}
+
+/* Специфические стили для ссылок в тексте */
+.pages a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.pages a:hover {
+  color: var(--color-secondary);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 767px) {
+  .pages h1 {
+    font-size: 2rem;
+  }
+
+  .pages h2 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-m);
+  }
+
+  .pages {
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
+  }
+
+  .pages p,
+  .pages li {
+    font-size: 0.95rem;
+  }
+}
