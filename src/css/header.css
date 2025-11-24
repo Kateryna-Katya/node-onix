@@ -25,6 +25,10 @@
   cursor: pointer;
   padding: 0.5rem;
 }
+.header__logo{
+  width: 140px;
+  height: auto;
+}
 
 .nav__toggle i {
   width: 28px;
@@ -76,7 +80,37 @@
 .nav__item--cta .btn {
   width: 100%;
 }
+.nav__item--cta {
+  /* Відступ від попередніх пунктів меню */
+  margin-top: 15px;
+  /* Горизонтальний відступ від країв меню */
+  padding: 0 var(--spacing-m);
+}
 
+.nav__item--cta .btn {
+  /* На повну ширину в мобільному меню */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Використовуємо великі розміри, як у Hero */
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+  /* Кольори Primary Button */
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration);
+}
+
+.nav__item--cta .btn:hover {
+  background-color: #0069E0;
+  /* Темніший колір при наведенні */
+}
 /* Адаптивность для десктопа */
 @media (min-width: 1024px) {
   .nav__toggle {
@@ -112,4 +146,17 @@
   .nav__item--cta .btn {
     width: auto;
   }
+    .nav__item--cta {
+      margin-left: var(--spacing-m);
+      margin-top: 0;
+      padding: 0;
+      /* Прибираємо мобільний контейнерний відступ */
+    }
+  
+    .nav__item--cta .btn {
+      width: auto;
+      /* Компактний розмір для хедера */
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+    }
 }
