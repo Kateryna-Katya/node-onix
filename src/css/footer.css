@@ -1,21 +1,130 @@
 .footer {
-  padding: 20px 0;
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding-top: var(--spacing-l);
 }
-.footer-desc {
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__logo {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-bottom: var(--spacing-s);
+}
+
+.footer__logo:hover {
+  color: var(--color-primary);
+}
+
+.footer__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-m);
+  color: var(--color-secondary);
+}
+
+.footer__text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Навигация в футере */
+.footer__nav-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__nav-list a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  transition: color var(--transition-duration);
+}
+
+.footer__nav-list a:hover {
+  color: var(--color-primary);
+}
+
+/* Контакты */
+.footer__contacts {
+  font-style: normal;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.footer__contact-item i {
+  color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer__contact-item a,
+.footer__contact-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Соцсети */
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: var(--spacing-m);
+}
+
+.footer__socials a {
+  color: var(--color-white);
+  transition: color var(--transition-duration);
+}
+
+.footer__socials a:hover {
+  color: var(--color-primary);
+}
+
+.footer__socials i {
+  width: 24px;
+  height: 24px;
+}
+
+/* Нижняя строка */
+.footer__bottom {
+  padding: var(--spacing-m) 0;
+}
+
+.footer__bottom-container {
   text-align: center;
 }
-.footer-link {
-  position: relative;
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
 }
-.footer-link::before {
-  content: '';
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-12deg);
-  z-index: -1;
-  width: 110%;
-  height: 24%;
-  background-color: #41d1ff;
-  transition: 200ms ease;
+
+/* Адаптивность для десктопа */
+@media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-m);
+  }
+
+  .footer__column--brand {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__column {
+    margin-bottom: var(--spacing-m);
+  }
 }

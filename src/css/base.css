@@ -1,32 +1,138 @@
 :root {
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Цвета */
+  --color-primary: #007AFF;
+  /* Яркий Синий */
+  --color-secondary: #FFB800;
+  /* Теплый Оранжевый */
+  --color-background: #F5F7FA;
+  /* Светло-Серый Фон */
+  --color-text: #1E293B;
+  /* Темный Текст */
+  --color-light-text: #64748B;
+  /* Серый Текст */
+  --color-white: #ffffff;
+  --color-border: #E2E8F0;
+
+  /* Шрифты */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Отступы */
+  --spacing-xxl: 8rem;
+  --spacing-xl: 6rem;
+  --spacing-l: 4rem;
+  --spacing-m: 2rem;
+  --spacing-s: 1rem;
+
+  /* Другие */
+  --border-radius: 8px;
+  --transition-duration: 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
   font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  /* Базовый размер для Mobile-First */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
   min-height: 100vh;
-  margin: 0;
 }
 
-main {
-  flex-grow: 1;
+/* Стили для ссылок и списков */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-duration);
 }
-main:has(.back-link) {
-  text-align: center;
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Стили для заголовков */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+/* Стили для плейсхолдера изображений */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Контейнер для центрирования контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-m);
+}
+
+/* Семантические секции */
+.section {
+  padding: var(--spacing-l) 0;
+}
+
+/* =========================================================================
+   2. КОМПОНЕНТЫ: ЛОГОТИП И КНОПКА (CTA)
+   ========================================================================= */
+
+/* Логотип */
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.logo:hover {
+  color: var(--color-primary);
+}
+
+/* Кнопка */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration), transform 0.2s;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  transform: translateY(-2px);
+  /* Эффект подъема */
+}
+
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
 }
