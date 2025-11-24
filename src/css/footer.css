@@ -5,13 +5,17 @@
 }
 
 .footer__container {
+  display: grid;
 grid-template-columns: 1fr;
   gap: var(--spacing-l);
   padding-bottom: var(--spacing-l);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
  
 }
-
+.footer-logo{
+  width: 200px;
+  height: auto;
+}
 .footer__logo {
   color: var(--color-white);
   font-size: 1.8rem;
@@ -114,17 +118,25 @@ grid-template-columns: 1fr;
 /* Адаптивность для десктопа */
 @media (min-width: 768px) {
   .footer__container {
+      /* Встановлюємо 2 стовпчики */
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-m);
+    }
+  
+    .footer__column--brand {
+      grid-column: span 1;
+    }
+}
+
+@media (min-width: 992px) {
+  .footer__container {
+    /* Встановлюємо 4 стовпчики, перезаписуючи 2 стовпчики */
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-m);
   }
 
-  .footer__column--brand {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer__column {
-    margin-bottom: var(--spacing-m);
-  }
+  /* Якщо потрібно, щоб бренд-колонка займала більше місця на десктопі: */
+  /* .footer__column--brand { 
+        grid-column: span 2; 
+    } */
 }
